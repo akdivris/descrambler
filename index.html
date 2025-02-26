@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="letter-d.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descrambler - Word Unscrambling Game</title>
+  <meta name="description" content="Challenge yourself with our word descrambler game. Form words from scrambled letters and earn points for trending words!" />
+  <link rel="stylesheet" href="styles.css?v=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap">
+</head>
+<body>
+  <div class="container">
+    <div class="console-window">
+      <div class="console-header">
+        <span class="console-title">~/descrambler.exe</span>
+        <div class="console-buttons">
+          <span class="console-button"></span>
+          <span class="console-button"></span>
+          <span class="console-button"></span>
+        </div>
+      </div>
+      
+      <div class="console-content">
+        <div class="difficulty-select">
+          <span class="prompt">> SELECT_DIFFICULTY:</span>
+          <div class="difficulty-buttons">
+            <button id="easy" class="difficulty-btn">EASY</button>
+            <button id="medium" class="difficulty-btn">MEDIUM</button>
+            <button id="hard" class="difficulty-btn">HARD</button>
+          </div>
+        </div>
+
+        <div class="game-stats">
+          <span class="prompt">> LEVEL:</span> <span id="level">1</span>
+          <span class="prompt">> SCORE:</span> <span id="score">0</span>
+          <span class="prompt">> DIFFICULTY:</span> <span id="current-difficulty">EASY</span>
+        </div>
+
+        <div class="game-area">
+          <span class="prompt">> SCRAMBLED_LETTERS:</span>
+          <div class="scramble-container">
+            <div id="scrambled-word" class="scrambled-word"></div>
+            <button id="rescramble" class="console-btn rescramble-btn" title="Rescramble letters">⟳</button>
+          </div>
+          
+          <span class="prompt">> INPUT:</span>
+          <div class="input-line">
+            <span class="cursor">$</span>
+            <input type="text" id="user-input" placeholder="type your word..." autocomplete="off">
+          </div>
+          
+          <div id="feedback" class="feedback"></div>
+        </div>
+
+        <div class="controls">
+          <button id="new-game" class="console-btn">NEW_GAME()</button>
+          <button id="start-over" class="console-btn">RESET()</button>
+          <button id="clear-input" class="console-btn">CLEAR()</button>
+        </div>
+
+        <div class="word-list-container">
+          <span class="prompt">> FOUND_WORDS[]:</span>
+          <div id="word-list" class="word-list"></div>
+        </div>
+
+        <div class="trending-container">
+          <span class="prompt">> TRENDING_DATA:</span>
+          <div id="trending-graph" class="trending-graph"></div>
+        </div>
+
+        <div class="instructions">
+          <span class="prompt">> HELP:</span>
+          <pre class="help-text">
+  DIFFICULTY LEVELS:
+  - EASY:   6-8 letters, common words
+  - MEDIUM: 8-10 letters, moderate words
+  - HARD:   10-12 letters, complex words
+
+  SCORING:
+  - 3 letters: 100 pts
+  - 4 letters: 200 pts
+  - 5 letters: 400 pts
+  - 6+ letters: 800 pts
+  - Trending words: +bonus pts
+  - Level multiplier: ×(level)</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="words.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

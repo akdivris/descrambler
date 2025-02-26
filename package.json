@@ -1,0 +1,14 @@
+{
+  "name": "descrambler",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "http-server . -p 3000",
+    "dev": "http-server . -p 3000",
+    "build": "mkdir -p dist && cp -r index.html styles.css script.js words.js dist/"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
